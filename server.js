@@ -8,7 +8,8 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
+const port=5000;
 
 // <--------------common middlewares--------------------->
 
@@ -38,7 +39,7 @@ app.use((err, req, res, next) => {
 
 // <--------------socket.io server----------------------->
 
-const server = app.listen(port, () => {});
+const server = app.listen(port, () => {console.log(`listning on port${port}`)});
 
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
