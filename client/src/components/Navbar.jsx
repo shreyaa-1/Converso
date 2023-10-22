@@ -14,6 +14,7 @@ import Logo from '../images/chat-logoo.png';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  
   const [search, setSearch] = useState("");
   const { id } = jwt_decode(localStorage.getItem("token"));
   const [searchedUsers, setSearchedUsers] = useState([]);

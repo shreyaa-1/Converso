@@ -163,6 +163,7 @@ export default function PersonalProfile() {
             </MDBCard>
           </MDBCol>
         </MDBRow>
+        
       </MDBContainer>
     </section>
     </>

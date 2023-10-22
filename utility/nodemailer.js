@@ -28,7 +28,7 @@ module.exports.MailSender = async function MailSender (str,data){
       `;
     }
     else if(str==='signupVerify'){
-      // console.log(data.otp);
+     
       Osubject=`OTP Verification`;
       Ohtml=`<h1>Converso</h1>
       Hi, Please use this otp to verify your email ${data.otp};

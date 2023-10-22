@@ -9,6 +9,7 @@ const Chats = () => {
 
     return (
         <>
+        
             <Navbar />
             <div className='chats__layout'>
                 <MyChats />

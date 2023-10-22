@@ -13,6 +13,10 @@ const getAllMessages = async (req, res, next) => {
   }
 };
 
+
+
+
+
 const getMessage = async (req, res, next) => {
   try {
     const message = await Message.findById(req.params.messageid);

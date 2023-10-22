@@ -10,6 +10,7 @@ const UserCard = ({ imgClass, ele, clickFunc }) => {
   const otheruser = ele.users.filter((user) => user._id !== id)[0];
 
   const getMessage = async (ele) => {
+    
     const message = await fetchData(
       `/message/getmessage/${id}/${ele.latestMessage}`
     );

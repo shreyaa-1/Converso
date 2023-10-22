@@ -161,6 +161,7 @@ function Register() {
           >
             Log in
           </NavLink>
+          
         </p>
       </div>
     </section>

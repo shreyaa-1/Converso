@@ -12,6 +12,7 @@ const GroupChatModal = ({
   type,
   group,
   setMyChats,
+  
   myChats,
 }) => {
   const { id } = jwt_decode(localStorage.getItem("token"));

@@ -14,6 +14,7 @@ messageRouter.get(
   verifyUser,
   messageController.getAllMessages
 );
+
 messageRouter.post(
   "/sendmessage/:id",
   verifyUser,

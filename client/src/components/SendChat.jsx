@@ -20,6 +20,7 @@ const SendChat = ({ socket, setMessages, messages, setNewmsg }) => {
           chatid: currentChat._id,
           content: emoji,
         },
+        
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

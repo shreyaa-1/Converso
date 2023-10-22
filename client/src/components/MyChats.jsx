@@ -15,6 +15,7 @@ const MyChats = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const { setCurrentChat, loading } = useContext(AppContext);
 
+  
   const fetchAllChats = async () => {
     const data = await fetchData(`/chat/getchats/${id}`);
     setMyChats(data);

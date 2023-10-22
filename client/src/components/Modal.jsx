@@ -13,6 +13,7 @@ const Modal = ({ children, setModalOpen, handleClick, btnname, mClass }) => {
           className="close-btn"
         />
         {children}
+        
         {btnname && (
           <button
             className="btn"

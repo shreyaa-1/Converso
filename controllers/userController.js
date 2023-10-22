@@ -71,6 +71,9 @@ const register = async (req, res, next) => {
 
 
 
+
+
+
 // const sendOTP = async(email)=>{
 //   try{
 //     const existingUser = await User.findOne({email});

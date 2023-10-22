@@ -16,6 +16,7 @@ const schema = mongoose.Schema(
         ref: "User",
       },
     ],
+    
     latestMessage: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Message",

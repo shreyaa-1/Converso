@@ -9,6 +9,7 @@ const initialState = {
   currentChat: {},
 };
 
+
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 

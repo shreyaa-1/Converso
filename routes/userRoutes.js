@@ -9,4 +9,5 @@ userRouter.get("/searchuser/:id", verifyUser, userController.searchUser);
 userRouter.post("/login", userController.login);
 userRouter.post("/sendotp",sendotp);
 userRouter.post("/register",verifyotp,userController.register);
+
 module.exports = userRouter;

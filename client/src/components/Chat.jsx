@@ -17,6 +17,7 @@ const Chat = () => {
   const [newmsg, setNewmsg] = useState({});
   let socket = useRef();
 
+  
   const getAllMessages = async () => {
     setLoading(true);
     const data = await fetchData(

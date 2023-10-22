@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import SendEmail from "./pages/Email";
 import { Toaster } from "react-hot-toast";
 import Chats from "./pages/Chats";
+
 import Profile from "./components/profile"
 
 function App() {
