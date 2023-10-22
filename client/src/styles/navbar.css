@@ -3,14 +3,14 @@
 nav {
   width: 100%;
   height: 8vh;
-  background-color: var(--black-color);
-  border: 1px solid var(--secondary-color);
+  background-color: white;
+  border: 3px black;
   border-radius: 15px;
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   position: relative;
 }
 
@@ -19,12 +19,74 @@ nav {
   display: flex;
   gap: 0.5rem;
   flex: 1;
+  margin-left:15rem;
 }
+
+@media (max-width: 1184px) {
+  .search {
+    margin-left:15vw;
+  }
+  .search-input {
+    width:40vw; 
+  }
+
+}
+
+@media (max-width: 1120px) {
+  .search {
+    margin-left:5vw;
+  }
+  .search-input {
+    width:2vw; 
+  }
+}
+
+@media (max-width: 746px) {
+  .search {
+    margin-left:5vw;
+    margin-right:2vw;
+  }
+  .search-input {
+    width:2vw; 
+  }
+  .profile__img img{
+    width:20px;height:20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search {
+    margin-left:5vw;
+    margin-right:2vw;
+  }
+  .search-input {
+    width:2vw;  
+  }
+  .profile__img img{
+    width:20px;height:20px;
+  }
+}
+
+@media (max-width: 408px) {
+  .search {
+    margin-left:1vw;
+    margin-right:2vw;
+  }
+  .search-input {
+    width:0.8vw; 
+  }
+
+  .profile__img{
+    width:20px;height:20px;
+  }
+}
+
+
 
 .search-input {
   padding: 0.5rem 2.5rem;
   color: var(--black-color);
-  border-radius: 50px;
+   width:50vw;
 }
 
 .search svg {
@@ -34,11 +96,23 @@ nav {
   color: var(--black-color);
 }
 
+
 .search__btn {
-  padding: 0.5rem 1rem;
+  width: 30%;
   font-size: 0.8rem;
-  border-radius: 50px;
+ margin:0 0px;
+
+ background-color: white;
+ border:1px solid rgb(92, 118, 213);
+ color: rgb(92, 118, 213);
 }
+
+.search__btn:hover{
+width:30%;
+ background-color: rgb(92, 118, 213);
+}
+
+
 
 .searched-users {
   position: absolute;
@@ -63,6 +137,14 @@ nav {
 
 .app__name {
   font-size: 2rem;
+  color:black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main-logo{
+  width:80px;height:90px;
+  padding-top:15px;
+  float:left;
 }
 
 .navbar__icons {
@@ -71,6 +153,7 @@ nav {
   justify-content: flex-end;
   position: relative;
   flex: 1;
+ 
 }
 
 .bell-icon {
@@ -95,26 +178,149 @@ nav {
 }
 
 .profile__image {
-  width: 5%;
+  width:50px;height:50px;
   display: flex;
+  width:
 }
 
 .profile__image img {
   width: 100%;
   border-radius: 50%;
+  width:45px;height:45px;
 }
 
 .profile__modal {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 3.5rem;
   font-size: 1.3rem;
+  
+}
+
+.name-display{
+color:brown;
+text-transform:uppercase;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+padding-bottom:1rem;
+font-size: 2rem;
 }
 
 .profile__modal img {
   margin-bottom: 1rem;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
+
+
+body,html{
+  height: 100%;
+}
+body {
+  background: white;   
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12%;
+}
+.user-card {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background-color: #fff;
+ border-radius: 10px;
+ padding: 40px;
+ width: 650px;
+ position: relative;
+ overflow: hidden;
+ box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+}
+
+.user-card:before {
+  content: '';
+  position: absolute;
+  height: 300%;
+  width: 173px;
+  background: #262626;
+  top: -60px;
+  left: -125px;
+  z-index: 0;
+  transform: rotate(17deg);
+}
+
+.user-card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  z-index: 3;
+}
+
+.user-card-img img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-card-info {
+  text-align: center;
+  color:#262626;
+}
+
+.user-card-info h2 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 3px;
+}
+
+.user-card-info p {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.user-card-info p span {
+ font-weight: 700;
+ margin-right: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .user-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }   
+  .user-card-img {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .user-card-info {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px){
+  .wrapper{
+     padding-top: 3%;
+  }
+  .user-card:before {
+     width: 300%;
+     height: 200px;
+     transform: rotate(0);
+  }
+  .user-card-info h2 {
+     margin-top: 25px;
+     font-size: 35px;
+  }
+  .user-card-info p span {
+     display: block;
+     margin-bottom: 15px;
+     font-size: 18px;
+  }
+}
+
+

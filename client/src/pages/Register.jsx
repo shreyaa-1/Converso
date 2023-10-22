@@ -4,10 +4,16 @@ import "../styles/register.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//  import { faEnvelope, faUser, faPhone, faLock,faKey } from '@fortawesome/free-solid-svg-icons'
+import { useParams } from "react-router-dom";
+
+
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 function Register() {
   const [loading, setLoading] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
   const [files, setFiles] = useState("");
   const [formDetails, setFormDetails] = useState({
     name: "",
@@ -46,6 +52,7 @@ function Register() {
   };
 
   const formSubmit = async (e) => {
+    setIsSignup(true);
     try {
       e.preventDefault();
       let { name, email, password, confpassword } = formDetails;
@@ -81,14 +88,17 @@ function Register() {
     }
   };
 
+
+
   return (
     <section className="register-section flex-center">
       <div className="register-container flex-center">
-        <h2 className="form-heading">Sign Up</h2>
+        <h2 className="form-heading">SIGN UP</h2>
         <form
           onSubmit={formSubmit}
           className="register-form"
         >
+
           <input
             type="text"
             name="name"
@@ -97,6 +107,7 @@ function Register() {
             value={formDetails.name}
             onChange={inputChange}
           />
+          <label htmlFor="name">Name</label>
           <input
             type="email"
             name="email"
@@ -105,6 +116,7 @@ function Register() {
             value={formDetails.email}
             onChange={inputChange}
           />
+          <label htmlFor="name">Email</label>
           <input
             type="file"
             name="pic"
@@ -113,6 +125,7 @@ function Register() {
               onUpload(e.target.files[0]);
             }}
           />
+          <label htmlFor="name">Image</label>
           <input
             type="password"
             name="password"
@@ -121,6 +134,8 @@ function Register() {
             value={formDetails.password}
             onChange={inputChange}
           />
+
+          <label htmlFor="name">Password</label>
           <input
             type="password"
             name="confpassword"
@@ -129,6 +144,7 @@ function Register() {
             value={formDetails.confpassword}
             onChange={inputChange}
           />
+          <label htmlFor="name"> Confirm Password</label>
           <button
             type="submit"
             className="btn form-btn"
@@ -137,7 +153,7 @@ function Register() {
             sign up
           </button>
         </form>
-        <p>
+        <p className="already-user">
           Already a user?{" "}
           <NavLink
             className="login-link"
@@ -148,7 +164,8 @@ function Register() {
         </p>
       </div>
     </section>
-  );
+  )
 }
+
 
 export default Register;

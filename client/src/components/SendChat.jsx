@@ -46,7 +46,7 @@ const SendChat = ({ socket, setMessages, messages, setNewmsg }) => {
         onChange={setEmoji}
         cleanOnEnter
         onEnter={handleOnEnter}
-        className="form-input"
+        className="form-input emote"
         placeholder="Type a message"
       />
       <button

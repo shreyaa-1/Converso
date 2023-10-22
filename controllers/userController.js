@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
-
 const searchUser = async (req, res, next) => {
   try {
     const searchquery = req.query.search
@@ -52,6 +51,7 @@ const login = async (req, res, next) => {
   }
 };
 
+
 const register = async (req, res, next) => {
   try {
     const alreadyPresent = await User.findOne({ email: req.body.email });
@@ -67,5 +67,29 @@ const register = async (req, res, next) => {
     next(error);
   }
 };
+
+
+
+
+// const sendOTP = async(email)=>{
+//   try{
+//     const existingUser = await User.findOne({email});
+//     if(!existingUser){
+//       throw Error("There's no account");
+//     }
+
+//     const otpDetails = {
+//       email, subject: "email verification",
+//       message:"verify your email with thte code below",
+//       duration: 1,
+//     }
+//     const createdOTP = await sendOTP(otpDetails);
+//     return createdOTP;
+//   }
+//   catch(error){
+//     throw error;
+//   }
+//   };
+
 
 module.exports = { login, register, getUser, searchUser };

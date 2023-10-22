@@ -9,6 +9,8 @@ import Modal from "./Modal";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Logo from '../images/chat-logoo.png';
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -36,16 +38,39 @@ const Navbar = () => {
 
   const children = (
     <div className="profile__modal">
-      <img
+      {/* <img
         src={
           userInfo.pic ||
           "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
         }
         alt="profile-pic"
       />
-      <span className="profile__name">{userInfo.name}</span>
-      <span className="profile__email">{userInfo.email}</span>
+      <span className="profile__name">Name:{userInfo.name}</span>
+      <span className="profile__email">{userInfo.email}</span> */}
+
+      <div className="wrapper">
+        <div class="user-card">
+          <div className="user-card-img">
+            <img
+              src={
+                userInfo.pic ||
+                "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
+              }
+              alt="profile-pic"
+            />
+          </div>
+          <div className="user-card-info">
+            <h4 className="name-display">{userInfo.name}</h4>
+            {/* <p><span>Name:</span> {userInfo.name}</p> */}
+            <p><span>Email:</span> {userInfo.email}</p>
+
+          </div>
+        </div>
+      </div>
+
+
     </div>
+
   );
 
   const logout = () => {
@@ -79,6 +104,7 @@ const Navbar = () => {
 
   return (
     <nav>
+      <div className="app__name"><img src={Logo} className="main-logo" /></div>
       <div className="search">
         <input
           type="text"
@@ -108,6 +134,7 @@ const Navbar = () => {
                   createChat(ele);
                 }}
               >
+
                 <div
                   className={`usercard__image flex-center search-card__image`}
                 >
@@ -129,9 +156,11 @@ const Navbar = () => {
       ) : (
         <></>
       )}
-      <div className="app__name">ChatterBox</div>
+
       <div className="navbar__icons">
-        <div className="profile__image">
+        <div className="profile__image" onClick={() => {
+          setModalOpen(!modalOpen);
+        }}>
           <img
             src={
               userInfo.pic ||
@@ -140,12 +169,7 @@ const Navbar = () => {
             alt="profile-pic"
           />
         </div>
-        <MdKeyboardArrowDown
-          className="arrow-icon"
-          onClick={() => {
-            setModalOpen(!modalOpen);
-          }}
-        />
+
       </div>
       {modalOpen && (
         <Modal

@@ -6,6 +6,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 import GroupChatModal from "./GroupChatModal";
 import fetchData from "../helper/apiCall";
 import AppContext from "../context/userContext";
+import { FaBars } from 'react-icons/fa';
+
 
 const MyChats = () => {
   const { id } = jwt_decode(localStorage.getItem("token"));
@@ -26,34 +28,42 @@ const MyChats = () => {
     setCurrentChat(other);
   };
 
-  // if (loading) return <h2 className="flex-center loading">Loading...</h2>;
 
   return (
+
+
     <section className="mychats">
+
+
       <div className="mychats-top">
-        <h2 className="mychats__heading">My Chats</h2>
-        <div
-          className="create-group"
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        >
-          <span>Create group chat</span>
-          <AiOutlinePlus className="plus__icon" />
+
+        <div className="menu">
+
+          <div
+            className="create-group"
+            onClick={() => {
+              setModalOpen(true);
+            }}
+          >
+            <div>&nbsp;Create Group Chat &nbsp;<b>+</b></div>
+
+          </div>
+
+          <div className="allusers">
+            {myChats.map((ele) => {
+              return (
+                <UserCard
+                  ele={ele}
+                  key={ele._id}
+                  clickFunc={clickFunc}
+                  imgClass={"mychats-img"}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-      <div className="allusers">
-        {myChats.map((ele) => {
-          return (
-            <UserCard
-              ele={ele}
-              key={ele._id}
-              clickFunc={clickFunc}
-              imgClass={"mychats-img"}
-            />
-          );
-        })}
-      </div>
+
       <GroupChatModal
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
@@ -66,3 +76,8 @@ const MyChats = () => {
 };
 
 export default MyChats;
+
+
+
+
+

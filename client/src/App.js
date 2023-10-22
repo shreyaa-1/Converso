@@ -7,8 +7,10 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import SendEmail from "./pages/Email";
 import { Toaster } from "react-hot-toast";
 import Chats from "./pages/Chats";
+import Profile from "./components/profile"
 
 function App() {
   const Protected = ({ children }) => {
@@ -30,6 +32,10 @@ function App() {
         <Route
           path="/"
           element={<Login />}
+        />
+        <Route
+          path="/sendotp"
+          element={< SendEmail/>}
         />
         <Route
           path="/register"

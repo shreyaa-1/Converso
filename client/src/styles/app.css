@@ -38,7 +38,7 @@ a {
 }
 
 .btn {
-  color: var(--secondary-color);
+  color:white;
   background-color: var(--primary-color);
   font-size: 1rem;
   padding: 0.5rem;
@@ -52,14 +52,15 @@ a {
 }
 
 .btn:hover {
-  background-color: var(--tertiary-color);
+color:#f0f0ff;
+width:220px;
 }
 
 .loading {
   height: 85vh;
   width: 100vw;
-  font-size: 4rem;
-  color: var(--light-blue-color);
+  font-size: 2rem;
+  color: black;
   font-weight: 900;
   letter-spacing: 2px;
 }
